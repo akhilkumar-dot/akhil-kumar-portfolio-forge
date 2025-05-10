@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,17 +13,10 @@ const queryClient = new QueryClient();
 
 const App = () => {
   // Set page title
-  useEffect(() => {
+  React.useEffect(() => {
     document.title = "Mutyalapati Akhil Kumar | ML Engineer Portfolio";
-    
-    // Check for system preference for dark mode
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (prefersDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    // Ensure light theme is always used
+    document.documentElement.classList.remove("dark");
   }, []);
 
   return (
