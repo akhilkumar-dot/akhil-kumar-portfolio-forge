@@ -28,8 +28,8 @@ const projects: Project[] = [
       { name: "TensorFlow", color: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
       { name: "Keras", color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
     ],
-    githubUrl: "https://github.com",
-    imageUrl: "/placeholder.svg",
+    githubUrl: "https://github.com/akhilkumar-dot/sentiment-analyzer",
+    imageUrl: "/lovable-uploads/1e01c065-eb3a-442e-a985-76f9a094ba24.png",
   },
   {
     title: "Loan Approval Prediction",
@@ -41,8 +41,8 @@ const projects: Project[] = [
       { name: "Pandas", color: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300" },
       { name: "XGBoost", color: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300" },
     ],
-    githubUrl: "https://github.com",
-    imageUrl: "/placeholder.svg",
+    githubUrl: "https://github.com/akhilkumar-dot/Loan",
+    imageUrl: "/lovable-uploads/3fc0ec8e-301f-4fd8-b539-5fec176b5d91.png",
   },
   {
     title: "Brain Tumor Prediction",
@@ -54,8 +54,8 @@ const projects: Project[] = [
       { name: "OpenCV", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
       { name: "Keras", color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
     ],
-    githubUrl: "https://github.com",
-    imageUrl: "/placeholder.svg",
+    githubUrl: "https://github.com/akhilkumar-dot/Brain-Tumor",
+    imageUrl: "/lovable-uploads/7c4085eb-99e7-4b79-a8c9-2fc6e803253c.png",
   },
 ];
 

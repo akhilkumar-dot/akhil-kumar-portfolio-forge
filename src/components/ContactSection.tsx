@@ -83,8 +83,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/70">Email</p>
-                    <a href="mailto:akhil.kumar@example.com" className="text-foreground hover:text-accent">
-                      akhil.kumar@example.com
+                    <a href="mailto:makhil.vnk@gmail.com" className="text-foreground hover:text-accent">
+                      makhil.vnk@gmail.com
                     </a>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const ContactSection = () => {
                   <p className="text-foreground/70 mb-4">Connect with me on social media</p>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com"
+                      href="https://github.com/akhilkumar-dot"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="h-10 w-10 rounded-full bg-foreground/10 flex items-center justify-center hover:bg-accent/20 transition-colors"
