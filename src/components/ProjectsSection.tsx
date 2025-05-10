@@ -109,7 +109,7 @@ const ProjectsSection = () => {
 
         <div className="mt-12 text-center">
           <Button variant="default" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/akhilkumar-dot" target="_blank" rel="noopener noreferrer">
               See More Projects <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
