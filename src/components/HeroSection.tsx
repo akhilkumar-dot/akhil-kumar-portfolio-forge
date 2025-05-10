@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-background via-background to-secondary/10">
       <div className="container mx-auto px-4 py-12 md:py-24">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full md:w-3/5 animate-fade-in">
+          <div className="w-full md:w-3/5 animate-fade-in pl-0 md:pl-8 lg:pl-12">
             <div className="space-y-4">
               <h2 className="text-lg font-medium text-accent">Welcome to my portfolio</h2>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-balance leading-tight">

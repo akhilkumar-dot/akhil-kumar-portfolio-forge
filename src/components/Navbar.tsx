@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -19,23 +19,8 @@ const navItems: NavItem[] = [
 ];
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Check if user prefers dark mode
-  useEffect(() => {
-    const isDarkMode = localStorage.getItem("theme") === "dark" || 
-      (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    
-    setIsDark(isDarkMode);
-    
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
 
   // Handle scroll event to change navbar background
   useEffect(() => {
@@ -52,17 +37,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-    setIsDark(!isDark);
-  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -96,16 +70,10 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button variant="ghost" size="icon" onClick={toggleTheme}>
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
         </div>
 
         {/* Mobile Navigation Toggle */}
         <div className="flex items-center md:hidden">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="mr-2">
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
           <Button variant="ghost" size="icon" onClick={toggleMobileMenu}>
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>

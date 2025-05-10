@@ -15,6 +15,8 @@ const App = () => {
   // Set page title
   React.useEffect(() => {
     document.title = "Mutyalapati Akhil Kumar | ML Engineer Portfolio";
+    // Ensure light theme is always used
+    document.documentElement.classList.remove("dark");
   }, []);
 
   return (
