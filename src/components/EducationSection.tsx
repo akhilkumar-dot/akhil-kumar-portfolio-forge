@@ -1,17 +1,16 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Download, FilePdf } from "lucide-react";
+import { FilePdf } from "lucide-react";  // Removed Download import
 import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
-  const handleDownloadResume = () => {
-    // Open the image in a new tab instead of downloading as PDF
-    window.open("/lovable-uploads/98e01139-7ba9-4e4d-89f7-126ce244ea9e.png", "_blank");
-    
+  const handleViewResume = () => {
+    // Open the resume PDF in a new tab
+    window.open("https://www.dropbox.com/scl/fi/gbvekd9t8070rm6840gim/Akhil_Resume_1.pdf?rlkey=5esau3s84mwcjeq1cwfu93w78&st=mkj82ujr&dl=0", "_blank");
+
     // Show a toast notification
     toast.success("Resume opened in a new tab", {
-      description: "You can save it from there if needed"
+      description: "You can view or save it from there."
     });
   };
 
@@ -56,7 +55,19 @@ const EducationSection = () => {
             </div>
           </div>
           
-          
+          {/* Resume Section */}
+          <div className="bg-card rounded-xl shadow-md p-6 flex flex-col">
+            <h3 className="text-xl font-semibold mb-4">Resume</h3>
+            <div className="flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6">
+              <div className="text-center">
+                <FilePdf size={64} className="mx-auto text-accent/70 mb-4" />
+                <p className="text-foreground/70 mb-2">View my resume to learn more about my experience and qualifications.</p>
+              </div>
+            </div>
+            <Button className="w-full" onClick={handleViewResume}>
+              <FilePdf className="mr-2 h-4 w-4" /> View Resume
+            </Button>
+          </div>
         </div>
       </div>
     </section>
