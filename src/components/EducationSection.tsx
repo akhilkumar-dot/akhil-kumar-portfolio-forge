@@ -56,19 +56,7 @@ const EducationSection = () => {
             </div>
           </div>
           
-          {/* Resume Section */}
-          <div className="bg-card rounded-xl shadow-md p-6 flex flex-col">
-            <h3 className="text-xl font-semibold mb-4">Resume</h3>
-            <div className="flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6">
-              <div className="text-center">
-                <FilePdf size={64} className="mx-auto text-accent/70 mb-4" />
-                <p className="text-foreground/70 mb-2">View my resume to learn more about my experience and qualifications.</p>
-              </div>
-            </div>
-            <Button className="w-full" onClick={handleDownloadResume}>
-              <FilePdf className="mr-2 h-4 w-4" /> View Resume
-            </Button>
-          </div>
+          
         </div>
       </div>
     </section>
