@@ -4,15 +4,16 @@ import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
   const handleOpenResume = () => {
-    const resumeUrl = "C:\\Users\\Akhil M\\Downloads\\Akhil_Resume_1.pdf";
+    const resumeUrl = "/Akhil_Resume_1.pdf"; // <-- Correct path from public/
     const newTab = window.open(resumeUrl, "_blank");
+
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
       toast.error("Popup blocked", {
         description: "Please allow popups for this site to view the resume.",
       });
     } else {
-      toast.success("Resume opened in a new tab", {
-        description: "You can view or download it there.",
+      toast.success("Resume opened", {
+        description: "You can view or download it from the new tab.",
       });
     }
   };
@@ -32,10 +33,7 @@ const EducationSection = () => {
           <div className="bg-card rounded-xl shadow-md p-6">
             <div className="flex items-start space-x-4">
               <div className="h-16 w-16 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="text-accent" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
               </div>
               <div>
                 <h3 className="text-xl font-semibold">Bachelor of Technology</h3>
@@ -44,7 +42,7 @@ const EducationSection = () => {
                 <p className="text-sm text-foreground/60 mt-1">2023 - 2027 (Expected)</p>
               </div>
             </div>
-            
+
             <div className="mt-6">
               <h4 className="text-lg font-medium mb-2">Relevant Coursework</h4>
               <ul className="list-disc list-inside space-y-1 text-foreground/80">
@@ -58,7 +56,7 @@ const EducationSection = () => {
             </div>
           </div>
 
-          {/* Resume Block */}
+          {/* Resume Section */}
           <div className="bg-card rounded-xl shadow-md p-6 flex flex-col">
             <h3 className="text-xl font-semibold mb-4">Resume</h3>
             <div
@@ -66,7 +64,7 @@ const EducationSection = () => {
               onClick={handleOpenResume}
             >
               <img
-                src="/resume-thumbnail.png" // Optional: a thumbnail image of your resume
+                src="/resume-thumbnail.jpg" // Put this image in /public/
                 alt="Resume Thumbnail"
                 className="rounded-lg max-h-64 shadow-lg"
               />
