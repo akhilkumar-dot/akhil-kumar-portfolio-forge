@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Footer = () => {
@@ -14,15 +13,12 @@ const Footer = () => {
               Aspiring Machine Learning Engineer
             </p>
           </div>
-          
+
           <div className="text-center md:text-right">
             <p className="text-foreground/70 text-sm">
               © {new Date().getFullYear()} Mutyalapati Akhil Kumar. All rights reserved.
             </p>
           </div>
-        </div>
-        
-        
         </div>
       </div>
     </footer>
