@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { FilePdf } from "lucide-react";  // Removed Download import
 import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
-  const handleViewResume = () => {
-    // Open the resume PDF in a new tab
-    window.open("https://www.dropbox.com/scl/fi/gbvekd9t8070rm6840gim/Akhil_Resume_1.pdf?rlkey=5esau3s84mwcjeq1cwfu93w78&st=mkj82ujr&dl=0", "_blank");
+  const [isZoomed, setIsZoomed] = useState(false);
 
-    // Show a toast notification
-    toast.success("Resume opened in a new tab", {
-      description: "You can view or save it from there."
+  const handleZoomInResume = () => {
+    setIsZoomed(true);  // Trigger zoom-in effect
+    toast.success("Resume is zoomed in", {
+      description: "Click anywhere outside to zoom out."
     });
+  };
+
+  const handleZoomOutResume = () => {
+    setIsZoomed(false);  // Trigger zoom-out effect
   };
 
   return (
@@ -54,19 +56,37 @@ const EducationSection = () => {
               </ul>
             </div>
           </div>
-          
-          {/* Resume Section */}
+
+          {/* Resume Image Section */}
           <div className="bg-card rounded-xl shadow-md p-6 flex flex-col">
             <h3 className="text-xl font-semibold mb-4">Resume</h3>
-            <div className="flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6">
-              <div className="text-center">
-                <FilePdf size={64} className="mx-auto text-accent/70 mb-4" />
-                <p className="text-foreground/70 mb-2">View my resume to learn more about my experience and qualifications.</p>
-              </div>
+
+            {/* Resume Image */}
+            <div
+              className={`flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6 ${
+                isZoomed ? "zoomed" : ""
+              }`}
+              onClick={handleZoomInResume}
+            >
+              <img
+                src="/path/to/your/resume-image.png" // Replace with your resume image path
+                alt="Resume"
+                className="cursor-pointer rounded-lg shadow-lg transition-transform duration-500 ease-in-out"
+              />
             </div>
-            <Button className="w-full" onClick={handleViewResume}>
-              <FilePdf className="mr-2 h-4 w-4" /> View Resume
-            </Button>
+
+            {isZoomed && (
+              <div
+                className="fixed inset-0 bg-black/70 flex items-center justify-center"
+                onClick={handleZoomOutResume}
+              >
+                <img
+                  src="C:\Users\Akhil M\Downloads\Akhil_Resume_1_page-0001 (2).jpg" // Replace with your resume image path
+                  alt="Zoomed Resume"
+                  className="max-w-3xl max-h-3xl"
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
