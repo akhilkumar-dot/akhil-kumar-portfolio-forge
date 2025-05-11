@@ -1,9 +1,20 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, FilePdf } from "lucide-react";
+import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
+  const handleDownloadResume = () => {
+    // Open the image in a new tab instead of downloading as PDF
+    window.open("/lovable-uploads/98e01139-7ba9-4e4d-89f7-126ce244ea9e.png", "_blank");
+    
+    // Show a toast notification
+    toast.success("Resume opened in a new tab", {
+      description: "You can save it from there if needed"
+    });
+  };
+
   return (
     <section id="education" className="py-20 scroll-section">
       <div className="container mx-auto px-4">
@@ -50,20 +61,12 @@ const EducationSection = () => {
             <h3 className="text-xl font-semibold mb-4">Resume</h3>
             <div className="flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6">
               <div className="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-accent/70 mb-4">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-                <p className="text-foreground/70 mb-2">Download my resume to learn more about my experience and qualifications.</p>
+                <FilePdf size={64} className="mx-auto text-accent/70 mb-4" />
+                <p className="text-foreground/70 mb-2">View my resume to learn more about my experience and qualifications.</p>
               </div>
             </div>
-            <Button className="w-full" asChild>
-              <a href="/lovable-uploads/98e01139-7ba9-4e4d-89f7-126ce244ea9e.png" download="Mutyalapati_Akhil_Kumar_Resume.pdf">
-                <Download className="mr-2 h-4 w-4" /> Download Resume (PDF)
-              </a>
+            <Button className="w-full" onClick={handleDownloadResume}>
+              <FilePdf className="mr-2 h-4 w-4" /> View Resume
             </Button>
           </div>
         </div>
