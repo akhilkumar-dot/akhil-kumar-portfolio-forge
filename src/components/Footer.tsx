@@ -22,19 +22,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-6 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <nav className="flex space-x-6">
-                <a href="#home" className="text-foreground/70 hover:text-foreground text-sm">Home</a>
-                <a href="#about" className="text-foreground/70 hover:text-foreground text-sm">About</a>
-                <a href="#projects" className="text-foreground/70 hover:text-foreground text-sm">Projects</a>
-                <a href="#contact" className="text-foreground/70 hover:text-foreground text-sm">Contact</a>
-              </nav>
-            </div>
-            
         
-          </div>
         </div>
       </div>
     </footer>
