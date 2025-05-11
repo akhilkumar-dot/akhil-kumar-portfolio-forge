@@ -3,17 +3,14 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
-  const [isZoomed, setIsZoomed] = useState(false);
-
-  const handleZoomInResume = () => {
-    setIsZoomed(true);  // Trigger zoom-in effect
-    toast.success("Resume is zoomed in", {
-      description: "Click anywhere outside to zoom out."
+  const handleOpenResume = () => {
+    // Open the PDF in a new tab
+    window.open("C:\Users\Akhil M\Downloads\Akhil_Resume_1.pdf", "_blank");
+    
+    // Show a toast notification
+    toast.success("Resume opened in a new tab", {
+      description: "You can view it in your default PDF viewer."
     });
-  };
-
-  const handleZoomOutResume = () => {
-    setIsZoomed(false);  // Trigger zoom-out effect
   };
 
   return (
@@ -57,36 +54,22 @@ const EducationSection = () => {
             </div>
           </div>
 
-          {/* Resume Image Section */}
+          {/* Resume Section with PDF Link */}
           <div className="bg-card rounded-xl shadow-md p-6 flex flex-col">
             <h3 className="text-xl font-semibold mb-4">Resume</h3>
-
-            {/* Resume Image */}
-            <div
-              className={`flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6 ${
-                isZoomed ? "zoomed" : ""
-              }`}
-              onClick={handleZoomInResume}
-            >
+            {/* Clickable Image for Resume PDF */}
+            <div className="flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6">
               <img
-                src="/path/to/your/resume-image.png" // Replace with your resume image path
+                src="/images/resume-thumbnail.png"  // This is a thumbnail image of your resume, not the actual PDF
                 alt="Resume"
-                className="cursor-pointer rounded-lg shadow-lg transition-transform duration-500 ease-in-out"
+                className="cursor-pointer rounded-lg shadow-lg"
+                onClick={handleOpenResume}  // Opens PDF when clicked
               />
             </div>
-
-            {isZoomed && (
-              <div
-                className="fixed inset-0 bg-black/70 flex items-center justify-center"
-                onClick={handleZoomOutResume}
-              >
-                <img
-                  src="C:\Users\Akhil M\Downloads\Akhil_Resume_1_page-0001 (2).jpg" // Replace with your resume image path
-                  alt="Zoomed Resume"
-                  className="max-w-3xl max-h-3xl"
-                />
-              </div>
-            )}
+            
+            <Button className="w-full" onClick={handleOpenResume}>
+              View Resume
+            </Button>
           </div>
         </div>
       </div>
