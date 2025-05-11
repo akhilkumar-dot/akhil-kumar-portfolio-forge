@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const HeroSection = () => {
   return (
@@ -38,8 +39,15 @@ const HeroSection = () => {
           <div className="w-full md:w-2/5 flex justify-center mt-12 md:mt-0">
             <div className="relative">
               <div className="absolute inset-0 bg-accent rounded-full blur-3xl opacity-20"></div>
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-portfolio-blue to-portfolio-purple rounded-full flex items-center justify-center relative animate-fade-in p-4">
-                <div className="text-white text-6xl font-bold">AK</div>
+              <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-portfolio-blue to-portfolio-purple rounded-full flex items-center justify-center relative animate-fade-in p-1 overflow-hidden">
+                <Avatar className="w-full h-full">
+                  <AvatarImage 
+                    src="/lovable-uploads/2aeb3934-aabf-4288-9407-1cd2116bd5c9.png" 
+                    alt="Profile picture of Akhil Kumar"
+                    className="object-cover" 
+                  />
+                  <AvatarFallback className="text-white text-6xl font-bold">AK</AvatarFallback>
+                </Avatar>
               </div>
             </div>
           </div>

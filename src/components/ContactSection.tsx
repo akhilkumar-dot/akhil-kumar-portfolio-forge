@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -172,7 +171,7 @@ const ContactSection = () => {
                       <Github className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/akhil-ml-nlp/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="h-10 w-10 rounded-full bg-foreground/10 flex items-center justify-center hover:bg-accent/20 transition-colors"
