@@ -81,6 +81,14 @@ const EducationSection = () => {
                   <div className="h-2 w-2 rounded-full bg-accent mr-2"></div>
                   <span>Python for Data Science (Udemy)</span>
                 </li>
+                <li className="flex items-center">
+                  <div className="h-2 w-2 rounded-full bg-accent mr-2"></div>
+                  <span>TensorFlow Developer Certificate (Google)</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="h-2 w-2 rounded-full bg-accent mr-2"></div>
+                  <span>Natural Language Processing (edX)</span>
+                </li>
               </ul>
             </div>
           </div>

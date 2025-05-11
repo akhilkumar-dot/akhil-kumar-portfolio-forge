@@ -23,6 +23,7 @@ const skills: Skill[] = [
 ];
 
 const otherSkills: SkillTag[] = [
+  { name: "Machine Learning", color: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
   { name: "Deep Learning", color: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
   { name: "Data Visualization", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
   { name: "NLP", color: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300" },
