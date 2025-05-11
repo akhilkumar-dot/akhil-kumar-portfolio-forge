@@ -28,7 +28,7 @@ const EducationSection = () => {
                 <h3 className="text-xl font-semibold">Bachelor of Technology</h3>
                 <p className="text-foreground/70 mb-2">2nd Year Student</p>
                 <p className="text-accent font-medium">VIT-AP University</p>
-                <p className="text-sm text-foreground/60 mt-1">2022 - 2026 (Expected)</p>
+                <p className="text-sm text-foreground/60 mt-1">2023 - 2027 (Expected)</p>
               </div>
             </div>
             

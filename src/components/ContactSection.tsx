@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,14 +8,61 @@ import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would handle form submission here
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // In a real application, you would send this data to a server
+      // For now, we'll simulate a network request
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Success message
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -39,20 +86,38 @@ const ContactSection = () => {
                     <label htmlFor="name" className="block text-sm font-medium mb-1">
                       Name
                     </label>
-                    <Input id="name" placeholder="Your name" required />
+                    <Input 
+                      id="name" 
+                      placeholder="Your name" 
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-1">
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="Your email" required />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="Your email" 
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-1">
                     Subject
                   </label>
-                  <Input id="subject" placeholder="Subject of your message" required />
+                  <Input 
+                    id="subject" 
+                    placeholder="Subject of your message"
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-1">
@@ -63,10 +128,16 @@ const ContactSection = () => {
                     placeholder="Your message here..."
                     className="min-h-[150px]"
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                   />
                 </div>
-                <Button type="submit" className="w-full md:w-auto px-8">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full md:w-auto px-8"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
