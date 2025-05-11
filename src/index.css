@@ -113,8 +113,15 @@
   }
   
   .card-hover {
-   @apply transition-all duration-300;
-  }
+  @apply transition-all duration-300; /* Keeps the transition effect */
+}
+
+.card-hover:hover {
+  background-color: inherit !important; /* Prevent background color change on hover */
+  color: inherit !important; /* Prevent text color change on hover */
+  box-shadow: none !important; /* Prevent shadow change on hover */
+  transform: none !important; /* Prevent translate/scale effect on hover */
+}
   
   .text-balance {
     text-wrap: balance;
