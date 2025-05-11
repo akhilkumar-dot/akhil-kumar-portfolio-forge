@@ -14,7 +14,7 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
@@ -22,8 +22,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Missing information",
@@ -34,29 +33,34 @@ const ContactSection = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      // In a real application, you would send this data to a server
-      // For now, we'll simulate a network request
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Success message
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+      const response = await fetch("https://formspree.io/f/xnndbglo", { // Replace with your real Formspree endpoint
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(formData)
       });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thanks! I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      }
     } catch (error) {
       toast({
-        title: "Something went wrong",
-        description: "There was an error sending your message. Please try again.",
+        title: "Network Error",
+        description: "Could not connect. Try again later.",
         variant: "destructive"
       });
     } finally {
@@ -82,25 +86,21 @@ const ContactSection = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
-                      Name
-                    </label>
-                    <Input 
-                      id="name" 
-                      placeholder="Your name" 
+                    <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
+                    <Input
+                      id="name"
+                      placeholder="Your name"
                       required
                       value={formData.name}
                       onChange={handleChange}
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
-                      Email
-                    </label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="Your email" 
+                    <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Your email"
                       required
                       value={formData.email}
                       onChange={handleChange}
@@ -108,20 +108,16 @@ const ContactSection = () => {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                    Subject
-                  </label>
-                  <Input 
-                    id="subject" 
+                  <label htmlFor="subject" className="block text-sm font-medium mb-1">Subject</label>
+                  <Input
+                    id="subject"
                     placeholder="Subject of your message"
                     value={formData.subject}
                     onChange={handleChange}
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
-                    Message
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
                   <Textarea
                     id="message"
                     placeholder="Your message here..."
@@ -131,8 +127,8 @@ const ContactSection = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full md:w-auto px-8"
                   disabled={isSubmitting}
                 >
@@ -158,7 +154,7 @@ const ContactSection = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="pt-4">
                   <p className="text-foreground/70 mb-4">Connect with me on social media</p>
                   <div className="flex space-x-4">
@@ -180,7 +176,7 @@ const ContactSection = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="pt-6 mt-6 border-t border-border">
                   <p className="text-foreground/70 mb-4">Currently available for:</p>
                   <div className="space-y-2">
