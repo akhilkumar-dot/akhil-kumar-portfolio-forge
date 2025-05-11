@@ -33,7 +33,7 @@ const AboutSection = () => {
                 <div className="text-foreground/80">Years of Coding</div>
               </div>
               <div className="bg-card p-6 rounded-lg shadow-md card-hover">
-                <div className="text-3xl font-bold text-accent mb-2">3+</div>
+                <div className="text-3xl font-bold text-accent mb-2">5+</div>
                 <div className="text-foreground/80">ML Projects</div>
               </div>
               <div className="bg-card p-6 rounded-lg shadow-md card-hover">
