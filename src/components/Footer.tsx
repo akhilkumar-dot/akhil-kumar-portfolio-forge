@@ -33,11 +33,7 @@ const Footer = () => {
               </nav>
             </div>
             
-            <div>
-              <p className="text-foreground/60 text-xs">
-                Designed and built by Mutyalapati Akhil Kumar using React and Tailwind CSS
-              </p>
-            </div>
+        
           </div>
         </div>
       </div>
