@@ -1,14 +1,6 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  Cell,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
 interface Skill {
   name: string;
@@ -48,7 +40,7 @@ const otherSkills: SkillTag[] = [
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-card p-3 rounded-md shadow-md border text-sm">
+      <div className="bg-card p-3 rounded-md shadow-md border">
         <p className="font-medium">{`${payload[0].payload.name}: ${payload[0].value}%`}</p>
       </div>
     );
@@ -71,36 +63,20 @@ const SkillsSection = () => {
           {/* Skills Chart */}
           <div className="w-full lg:w-3/5 bg-card rounded-xl shadow-md p-6">
             <h3 className="text-2xl font-semibold mb-6 font-heading">Technical Proficiency</h3>
-            <div className="h-[22rem] w-full">
+            <div className="h-[400px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={skills}
                   layout="vertical"
                   margin={{ top: 10, right: 30, left: 50, bottom: 10 }}
-                  barSize={20}
+                  barSize={32}
                 >
-                  <XAxis
-                    type="number"
-                    domain={[0, 100]}
-                    tick={{ fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
-                  />
-                  <YAxis
-                    dataKey="name"
-                    type="category"
-                    scale="band"
-                    tick={{ fontSize: 14 }}
-                    axisLine={false}
-                    tickLine={false}
-                  />
+                  <XAxis type="number" domain={[0, 100]} />
+                  <YAxis dataKey="name" type="category" scale="band" tick={{ fontSize: 14 }} />
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: "transparent" }} />
                   <Bar dataKey="percentage" radius={[0, 4, 4, 0]}>
                     {skills.map((_, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={index % 2 === 0 ? "#7A9D54" : "#917FB3"}
-                      />
+                      <Cell key={`cell-${index}`} fill={index % 2 === 0 ? "#7A9D54" : "#917FB3"} />
                     ))}
                   </Bar>
                 </BarChart>
@@ -113,7 +89,10 @@ const SkillsSection = () => {
             <h3 className="text-2xl font-semibold mb-6 font-heading">Tools & Technologies</h3>
             <div className="flex flex-wrap gap-3">
               {otherSkills.map((skill, index) => (
-                <Badge key={index} className={`${skill.color} text-sm py-2 px-3 card-hover`}>
+                <Badge
+                  key={index}
+                  className={`${skill.color} text-sm py-2 px-3 card-hover`}
+                >
                   {skill.name}
                 </Badge>
               ))}
