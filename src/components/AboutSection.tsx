@@ -29,7 +29,7 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="grid grid-cols-2 gap-4 max-w-md">
               <div className="bg-card p-6 rounded-lg shadow-md card-hover">
-                <div className="text-3xl font-bold text-accent mb-2">2+</div>
+                <div className="text-3xl font-bold text-accent mb-2">1+</div>
                 <div className="text-foreground/80">Years of Coding</div>
               </div>
               <div className="bg-card p-6 rounded-lg shadow-md card-hover">
