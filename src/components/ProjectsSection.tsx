@@ -55,7 +55,7 @@ const projects: Project[] = [
       { name: "Keras", color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
     ],
     githubUrl: "https://github.com/akhilkumar-dot/Brain-Tumor",
-    imageUrl: "/lovable-uploads/7c4085eb-99e7-4b79-a8c9-2fc6e803253c.png",
+    imageUrl: "/lovable-uploads/brain-tumor-detection.jpg",
   },
 ];
 
