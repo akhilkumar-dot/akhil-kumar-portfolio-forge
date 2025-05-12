@@ -8,24 +8,34 @@
   :root {
     --background: 240 25% 98%;
     --foreground: 222.2 84% 4.9%;
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
+
     --primary: 252 56% 24%;
     --primary-foreground: 210 40% 98%;
+
     --secondary: 264 33% 70%;
     --secondary-foreground: 222.2 47.4% 11.2%;
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
+
     --accent: 99 31% 47%;
     --accent-foreground: 222.2 47.4% 11.2%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
+
     --radius: 0.75rem;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -39,23 +49,32 @@
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
+
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
+
     --primary: 252 56% 60%;
     --primary-foreground: 0 0% 98%;
+
     --secondary: 264 33% 50%;
     --secondary-foreground: 0 0% 98%;
+
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
+
     --accent: 99 31% 40%;
     --accent-foreground: 0 0% 98%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -71,7 +90,7 @@
   * {
     @apply border-border;
   }
-
+  
   html {
     scroll-behavior: smooth;
   }
@@ -83,7 +102,7 @@
   .section-padding {
     @apply py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto;
   }
-
+  
   .section-title {
     @apply text-3xl md:text-4xl font-heading font-bold mb-6 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-1 after:bg-accent;
   }
@@ -92,19 +111,21 @@
     @apply bg-gradient-to-r from-portfolio-blue to-portfolio-purple;
   }
 
-  /* Updated card-hover class */
+  /* Card Hover Style */
   .card-hover {
-    @apply transition-all duration-300 ease-in-out; /* Smooth transition */
-    background-color: inherit !important; /* Prevent color change */
-    color: inherit !important; /* Prevent text color change */
-    box-shadow: none !important; /* Prevent shadow change */
-    transform: none !important; /* Prevent transform effects */
+    @apply transition-all duration-300;
+    /* Only add shadow and transformation, no color changes */
+    @apply hover:shadow-lg hover:-translate-y-1;
   }
 
-  .card-hover:hover {
-    /* Only apply hover effect for transforms */
-    transform: scale(1.05) !important; /* Slight scale on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Light shadow */
+  /* Ensure no hover color change on badges */
+  .badge-hover-no-color {
+    @apply transition-all duration-300;
+    /* Reset any hover color changes */
+    &:hover {
+      color: inherit;  /* Ensures text color doesn't change on hover */
+      background-color: inherit;  /* Ensures background color doesn't change on hover */
+    }
   }
 
   .text-balance {
