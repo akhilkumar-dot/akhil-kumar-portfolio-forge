@@ -91,7 +91,7 @@ const SkillsSection = () => {
               {otherSkills.map((skill, index) => (
                 <Badge
                   key={index}
-                  className={`${skill.color} text-sm py-2 px-3`}
+                  className={`${skill.color} text-sm py-2 px-3 card-hover badge-hover-no-color`}
                 >
                   {skill.name}
                 </Badge>
