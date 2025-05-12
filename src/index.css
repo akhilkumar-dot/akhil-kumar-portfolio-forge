@@ -94,14 +94,17 @@
 
   /* Updated card-hover class */
   .card-hover {
-    @apply transition-all duration-300; /* Keeps the transition effect */
+    @apply transition-all duration-300 ease-in-out; /* Smooth transition */
+    background-color: inherit !important; /* Prevent color change */
+    color: inherit !important; /* Prevent text color change */
+    box-shadow: none !important; /* Prevent shadow change */
+    transform: none !important; /* Prevent transform effects */
   }
 
   .card-hover:hover {
-    background-color: inherit !important; /* Prevent background color change on hover */
-    color: inherit !important; /* Prevent text color change on hover */
-    box-shadow: none !important; /* Prevent shadow change on hover */
-    transform: none !important; /* Prevent translate/scale effect on hover */
+    /* Only apply hover effect for transforms */
+    transform: scale(1.05) !important; /* Slight scale on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Light shadow */
   }
 
   .text-balance {
