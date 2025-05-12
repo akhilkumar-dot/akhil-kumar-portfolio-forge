@@ -4,7 +4,7 @@ import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
   const handleOpenResume = () => {
-    const resumeUrl = "/Akhil-resume.pdf"; // <-- Correct path from public/
+    const resumeUrl = "/Akhil_Resume-2.pdf"; // <-- Correct path from public/
     const newTab = window.open(resumeUrl, "_blank");
 
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
