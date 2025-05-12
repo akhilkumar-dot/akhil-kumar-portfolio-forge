@@ -42,7 +42,7 @@ const projects: Project[] = [
       { name: "FastAPI", color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
     ],
     githubUrl: "https://github.com/akhilkumar-dot/Traffic-Sign-Recognition",
-    imageUrl: "/lovable-uploads/traffic-sign-recognition-demo.png", // Replace with your actual image path
+    imageUrl: "/lovable-uploads/traffic-sign-recognition-system.jpg", // Replace with your actual image path
   },
   {
     title: "Brain Tumor Prediction",
