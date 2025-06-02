@@ -1,10 +1,12 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Download, File } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
   const handleOpenResume = () => {
-    const resumeUrl = "/Akhil_Resume-2.pdf"; // <-- Correct path from public/
+    const resumeUrl = "/Akhil_Resume-2.pdf";
     const newTab = window.open(resumeUrl, "_blank");
 
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
@@ -58,18 +60,22 @@ const EducationSection = () => {
 
           {/* Resume Section */}
           <div className="bg-card rounded-xl shadow-md p-6 flex flex-col">
-            <h3 className="text-xl font-semibold mb-4">Resume</h3>
+            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <File className="h-5 w-5" />
+              Resume
+            </h3>
             <div
               className="flex-grow flex items-center justify-center p-6 bg-muted/50 rounded-lg mb-6 cursor-pointer hover:scale-105 transition-transform duration-300"
               onClick={handleOpenResume}
             >
               <img
-                src="/resume-thumbnail.jpg" // Put this image in /public/
+                src="/resume-thumbnail.jpg"
                 alt="Resume Thumbnail"
                 className="rounded-lg max-h-64 shadow-lg"
               />
             </div>
-            <Button className="w-full" onClick={handleOpenResume}>
+            <Button className="w-full flex items-center gap-2" onClick={handleOpenResume}>
+              <Download className="h-4 w-4" />
               View Resume
             </Button>
           </div>
