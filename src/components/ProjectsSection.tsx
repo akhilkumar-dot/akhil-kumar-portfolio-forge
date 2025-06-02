@@ -42,7 +42,7 @@ const projects: Project[] = [
       { name: "FastAPI", color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
     ],
     githubUrl: "https://github.com/akhilkumar-dot/Traffic-Sign-Recognition",
-    imageUrl: "/lovable-uploads/Traffic-sign-recognition-system.jpg", // Replace with your actual image path
+    imageUrl: "/lovable-uploads/Traffic-sign-recognition-system.jpg",
   },
   {
     title: "Brain Tumor Prediction",
@@ -56,6 +56,45 @@ const projects: Project[] = [
     ],
     githubUrl: "https://github.com/akhilkumar-dot/Brain-Tumor",
     imageUrl: "/lovable-uploads/brain-tumor-detection.jpg",
+  },
+  {
+    title: "Stock Price Predictor",
+    description:
+      "LSTM-based deep learning model that predicts stock prices using historical data and technical indicators, with interactive visualizations for market analysis.",
+    tools: [
+      { name: "Python", color: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
+      { name: "TensorFlow", color: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
+      { name: "Pandas", color: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300" },
+      { name: "Matplotlib", color: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300" },
+    ],
+    githubUrl: "https://github.com/akhilkumar-dot/stock-predictor",
+    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Face Recognition Attendance System",
+    description:
+      "Real-time face recognition system for automated attendance tracking using computer vision and deep learning, with database integration for record management.",
+    tools: [
+      { name: "Python", color: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
+      { name: "OpenCV", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
+      { name: "Face Recognition", color: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300" },
+      { name: "SQLite", color: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300" },
+    ],
+    githubUrl: "https://github.com/akhilkumar-dot/face-attendance",
+    imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Chatbot with NLP",
+    description:
+      "Intelligent conversational AI chatbot built with natural language processing capabilities, featuring intent recognition and context-aware responses.",
+    tools: [
+      { name: "Python", color: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
+      { name: "NLTK", color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
+      { name: "Flask", color: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300" },
+      { name: "Scikit-learn", color: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
+    ],
+    githubUrl: "https://github.com/akhilkumar-dot/nlp-chatbot",
+    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
   },
 ];
 
