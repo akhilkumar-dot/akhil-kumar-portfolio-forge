@@ -6,7 +6,7 @@ import { toast } from "@/components/ui/sonner";
 
 const EducationSection = () => {
   const handleOpenResume = () => {
-    const resumeUrl = "/Akhil_Resume-2.pdf";
+    const resumeUrl = "/new_resume.pdf";
     const newTab = window.open(resumeUrl, "_blank");
 
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
