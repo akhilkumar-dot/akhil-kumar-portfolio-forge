@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Github, ArrowRight } from "lucide-react";
@@ -69,7 +68,7 @@ const projects: Project[] = [
       { name: "Streamlit", color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
     ],
     githubUrl: "https://github.com/akhilkumar-dot/pdf-qa-chatbot",
-    imageUrl: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=300&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
   },
   {
     title: "Face Recognition Attendance System",
