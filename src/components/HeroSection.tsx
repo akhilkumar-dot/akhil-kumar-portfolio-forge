@@ -39,7 +39,15 @@ const HeroSection = () => {
           <div className="w-full md:w-2/5 flex justify-center mt-12 md:mt-0">
             <div className="relative">
               <div className="absolute inset-0 bg-accent rounded-full blur-3xl opacity-20"></div>
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-portfolio-blue to-portfolio-purple rounded-full flex items-center justify-center relative animate-fade-in p-1 overflow-hidden">
+              
+              {/* Spiral Animation Container */}
+              <div className="absolute inset-0 animate-spin-slow">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-dashed border-accent/30"></div>
+                <div className="absolute top-4 left-4 w-56 h-56 md:w-72 md:h-72 rounded-full border-2 border-dotted border-portfolio-purple/40 animate-spin-reverse"></div>
+                <div className="absolute top-8 left-8 w-48 h-48 md:w-64 md:h-64 rounded-full border border-solid border-portfolio-teal/30 animate-pulse"></div>
+              </div>
+              
+              <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-portfolio-blue to-portfolio-purple rounded-full flex items-center justify-center relative animate-fade-in p-1 overflow-hidden z-10">
                 <Avatar className="w-full h-full">
                   <AvatarImage 
                     src="/lovable-uploads/2aeb3934-aabf-4288-9407-1cd2116bd5c9.png" 
