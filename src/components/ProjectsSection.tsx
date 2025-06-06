@@ -58,7 +58,7 @@ const projects: Project[] = [
     imageUrl: "/lovable-uploads/brain-tumor-detection.jpg",
   },
   {
-    title: "PDF Question-Answering Chatbot",
+    title: "PDF Q/A Chatbot",
     description:
       "Intelligent chatbot that answers user queries from uploaded PDFs using Retrieval-Augmented Generation (RAG).",
     tools: [
