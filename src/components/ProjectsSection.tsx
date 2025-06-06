@@ -60,7 +60,7 @@ const projects: Project[] = [
   {
     title: "PDF Question-Answering Chatbot",
     description:
-      "Intelligent chatbot that answers user queries from uploaded PDFs using Retrieval-Augmented Generation (RAG). Integrated FAISS vector store with HuggingFace embeddings for semantic document retrieval and Cohere's command-r-plus model for natural language answers.",
+      "Intelligent chatbot that answers user queries from uploaded PDFs using Retrieval-Augmented Generation (RAG).",
     tools: [
       { name: "LangChain", color: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300" },
       { name: "Cohere", color: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300" },
@@ -69,7 +69,7 @@ const projects: Project[] = [
       { name: "Streamlit", color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
     ],
     githubUrl: "https://github.com/akhilkumar-dot/Rag-Pipeline",
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
+    imageUrl: "/lovable-uploads/67e11ca0-3473-42f3-974c-c146ca7b7237.png",
   },
   {
     title: "Face Recognition Attendance System",
